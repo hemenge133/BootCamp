@@ -29,6 +29,11 @@ listingSchema.pre('save', function(next) {
     if(!this.created_at)
         this.created_at = current;
 
+    if(!this.name)
+        throw "No Name";
+    if(!this.code)
+        throw "No Code";
+
     next();
 });
 
